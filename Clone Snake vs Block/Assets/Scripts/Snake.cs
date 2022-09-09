@@ -97,7 +97,8 @@ public class Snake : MonoBehaviour
             _audio.PlayOneShot(CubeDestory);
             CubeDestoyed.SetActive(true);
             CubeDestoyed.GetComponent<ParticleSystem>().Stop();
-            Instantiate(CubeDestoyed, new Vector3(cube.transform.position.x, cube.transform.position.y + 1, cube.transform.position.z), cube.transform.rotation);
+            GameObject gameObject = Instantiate(CubeDestoyed, new Vector3(cube.transform.position.x, cube.transform.position.y + 1, cube.transform.position.z), cube.transform.rotation);
+            gameObject.transform.localScale = new Vector3(2.5f, 1, 2.5f);
             Destroy(cube.transform.parent.gameObject);
             _currentCube = cube;
         }
@@ -141,7 +142,7 @@ public class Snake : MonoBehaviour
         SnakeDestoyed.SetActive(true);
         SnakeDestoyed.GetComponent<ParticleSystem>().Stop();
         Instantiate(SnakeDestoyed, transform.position, transform.rotation);
-        Invoke("GameOver", 0f);
+        Invoke("GameOver", 0.05f);
         componentRigidbody.velocity = Vector3.zero;
     }
 }

@@ -23,4 +23,9 @@ public class MainMenu : MonoBehaviour
         game.isButtoFirsttLevelCliked = true;
         Time.timeScale = 1;
     }
+
+    public void ExitButtonPressed()
+    {
+        Application.Quit();
+    }
 }

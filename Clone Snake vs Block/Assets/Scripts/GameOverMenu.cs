@@ -10,6 +10,7 @@ public class GameOverMenu : MonoBehaviour
     public void ButtonRestartPressed()
     {
         game.isButtonRestartCliked = true;
+        Time.timeScale = 1;
     }
 
     public void ButtonMainMenuPressed()
