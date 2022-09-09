@@ -65,7 +65,7 @@ public class Game : MonoBehaviour
 
     public int LevelIndex
     {
-        get => PlayerPrefs.GetInt(LevelIndexKey, 0);
+        get => PlayerPrefs.GetInt(LevelIndexKey, 1);
         private set
         {
             PlayerPrefs.SetInt(LevelIndexKey, value);
@@ -89,6 +89,7 @@ public class Game : MonoBehaviour
         if (isButtonRestartCliked) ReloadLevel();
         if (isButtoFirsttLevelCliked) ResetLevels();
         if (isButtonNextLevelCliked) OnPlayerReachedFinish();
+        if (Input.GetKeyUp(KeyCode.Escape)) Application.Quit();
     }
 
     public void ResetLevels()
